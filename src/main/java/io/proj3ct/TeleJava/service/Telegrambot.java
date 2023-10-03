@@ -26,10 +26,6 @@ public class Telegrambot extends TelegramLongPollingBot {
     }
 
     private ApplicationContext context;
-    private void CloseBot(){
-        context = A
-        ((ConfigurableApplicationContext) context).close();
-    }
 
     @Override
     public String getBotUsername() {
@@ -50,11 +46,8 @@ public class Telegrambot extends TelegramLongPollingBot {
                 case "/start":
                     startCommand(chatId, update.getMessage());
                     break;
-                case "stop":
-                    CloseBot();
-                    break;
                 default:
-                    sendmessage(chatId,"I don't understand");
+                    sendmessage(chatId,messageText);
                     break;
             }
 
